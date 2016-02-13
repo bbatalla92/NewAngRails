@@ -1,0 +1,39 @@
+// Place all the styles related to the angRails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container{
+  text-align: center;
+  margin: auto;
+}
+.centerText{
+  text-align: center;
+}
+
+.toolbar{
+  background: #02a8f3;
+}
+
+.registeredGuestList{
+  margin: auto;
+  width: 60%;
+  border: 1px solid #02a8f3;
+  padding: 10px;
+  text-align: center;
+}
+
+.textInput{
+  margin: auto;
+  width: 60%;
+}
+
+
+.listItem{
+  text-align: center;
+}
+
+.filterButtons{
+  margin: auto;
+  width: 60%;
+}
