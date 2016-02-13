@@ -3,7 +3,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: ec2-54-163-228-0.compute-1.amazonaws.com
-  username: brennan.batalla@gmail.com
+  username: pgplguxdorwwsu
   database: d1lpi6jekglu35
 
 development:
