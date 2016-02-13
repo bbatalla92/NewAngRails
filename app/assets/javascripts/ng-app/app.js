@@ -11,7 +11,7 @@ var app = angular.module('angRails', ["ngResource",
     ]);
 
 app.factory('Entry', ['$resource', function($resource){
-    console.log("Entry Service");
+
     return $resource("/entries/:id", {id: "@id"});
 
 
@@ -103,7 +103,7 @@ app.controller("mainCTRL",['$scope', '$resource', 'Entry', '$mdSidenav', functio
 
 
 
-    app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
         /**
          * Route and States
@@ -129,6 +129,6 @@ app.controller("mainCTRL",['$scope', '$resource', 'Entry', '$mdSidenav', functio
             requireBase: false
         });
 
-    });
+    }]);
 
 
