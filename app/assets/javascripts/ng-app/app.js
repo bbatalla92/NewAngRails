@@ -10,21 +10,21 @@ var app = angular.module('angRails', ["ngResource",
         'templates'
     ]);
 
-app.factory('e', function($resource){
+app.factory('Entry', ['$resource', function($resource){
 
-   // return $resource("/entries/:id", {id: "@id"});
+    return $resource("/entries/:id", {id: "@id"});
 
 
 
-  });
+  }]);
 
-app.controller("mainCTRL", function($scope, $resource, e, $mdSidenav){
+app.controller("mainCTRL",['$scope', '$resource', 'Entry', '$mdSidenav', function($scope, $resource, Entry, $mdSidenav){
 
 
     var reformatDate;
 
     $scope.newGuest = "";
-    $scope.entries = [];//e.query();
+    $scope.entries = Entry.query();
     $scope.sortByElement = "createdAt";
     $scope.sortReversed = true;
     $scope.nameImageUP = null;
@@ -58,7 +58,6 @@ app.controller("mainCTRL", function($scope, $resource, e, $mdSidenav){
         today = mm + '/' + dd + '/' + yyyy;
         return today.toString();
     };
-
 
     $scope.addEntry = function() {
         var entry;
@@ -99,7 +98,7 @@ app.controller("mainCTRL", function($scope, $resource, e, $mdSidenav){
     }
 
 
-});
+}]);
 
 
 
