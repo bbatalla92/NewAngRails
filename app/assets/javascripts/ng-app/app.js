@@ -12,7 +12,7 @@ var app = angular.module('angRails', ["ngResource",
 
 app.factory('e', function($resource){
 
-    return $resource("/entries/:id", {id: "@id"});
+   // return $resource("/entries/:id", {id: "@id"});
 
 
 
@@ -24,7 +24,7 @@ app.controller("mainCTRL", function($scope, $resource, e, $mdSidenav){
     var reformatDate;
 
     $scope.newGuest = "";
-    $scope.entries = e.query();
+    $scope.entries = [];//e.query();
     $scope.sortByElement = "createdAt";
     $scope.sortReversed = true;
     $scope.nameImageUP = null;
