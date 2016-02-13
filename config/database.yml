@@ -7,7 +7,7 @@
 default: &default
   adapter: postgresql
   host: ec2-54-163-228-0.compute-1.amazonaws.com
-  username: pgplguxdorwwsu
+  username: brennan.batalla@gmail.com
   database: d1lpi6jekglu35
   Password: df2GeAhfYHBZtlZ8hM6Dmc0xC4
 
