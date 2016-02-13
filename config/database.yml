@@ -8,7 +8,7 @@ default: &default
 
 development:
   <<: *default
-
+  database: db/development.sqlite3
 
 test:
   <<: *default
@@ -16,3 +16,23 @@ test:
 
 production:
   <<: *default
+  database: db/production.sqlite3
+
+#
+#default: &default
+#  adapter: postgresql
+#  encoding: unicode
+#  host: ec2-54-163-228-0.compute-1.amazonaws.com
+#  username: brennan.bata
+#  database: d1lpi6jekglu35
+#
+#development:
+#  <<: *default
+#
+#
+#test:
+#  <<: *default
+#  database: db/test.sqlite3
+#
+#production:
+#  <<: *default
