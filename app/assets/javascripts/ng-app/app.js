@@ -11,7 +11,7 @@ var app = angular.module('angRails', ["ngResource",
     ]);
 
 app.factory('Entry', ['$resource', function($resource){
-
+    console.log("Entry Service");
     return $resource("/entries/:id", {id: "@id"});
 
 
