@@ -5,14 +5,15 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
+  username: brennan.batalla@gmail.com
+  password: Cheeto1!
   pool: 5
   timeout: 5000
 
 development:
-  adapter: postgresql
-  host: localhost
-  username: user
+  <<: *default
   database: app-dev
 
 # Warning: The database defined as "test" will be erased and
@@ -25,5 +26,4 @@ test:
 production:
     adapter: postgresql
     host: localhost
-    username: user
     database: app-dev
