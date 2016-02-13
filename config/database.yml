@@ -6,9 +6,9 @@
 #
 default: &default
   adapter: postgresql
-  Database: d1lpi6jekglu35
-  Port: 5432
-  User: pgplguxdorwwsu
+  host: ec2-54-163-228-0.compute-1.amazonaws.com
+  username: pgplguxdorwwsu
+  database: d1lpi6jekglu35
   Password: df2GeAhfYHBZtlZ8hM6Dmc0xC4
 
 development:
