@@ -24,7 +24,7 @@
     </div>
 </md-toolbar>
 
-<md-content layout="row" flex layout-fill >
+    <md-content layout="row" flex layout-fill >
 
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
         <!-- Trigger element is a md-button with an icon -->
@@ -32,12 +32,12 @@
 
 
 
-        <md-button ui-sref-active="activeState" ui-sref="home" class="centerText">
+        <md-button ng-click="navDrawOpen()" ui-sref-active="activeState" ui-sref="home" class="centerText">
             <md-icon><%= image_tag('ic_home_black_24px.svg')%></md-icon>
             Home
         </md-button>
         <md-divider></md-divider>
-        <md-button ui-sref-active="activeState" ui-sref="filterData" class="centerText">
+        <md-button ng-click="navDrawOpen()" ui-sref-active="activeState" ui-sref="filterData" class="centerText">
             <md-icon><%= image_tag('ic_filter_list_black_24px.svg')%></md-icon>
             Filter Data
         </md-button>
@@ -48,14 +48,17 @@
 
     <div class="container">
         <%= yield %>
+
+
+    <md-divider></md-divider>
+    <b>Copyright &copy; 2016 BRENNAN BATALLA</b>
     </div>
 
-    <div>
-        <md-divider></md-divider>
-        Copyright &copy; 2014 BRENNAN BATALLA
 
-    </div>
 </md-content>
+
+
+
 </div>
 
 </body>
