@@ -18,7 +18,7 @@ app.factory('Entry', ['$resource', function($resource){
 
   }]);
 
-app.controller("mainCTRL",['$scope', '$resource', 'Entry', '$mdSidenav', function($scope, $resource, Entry, $mdSidenav){
+app.controller("mainCTRL",['$scope', '$resource', 'Entry', '$mdSidenav', '$mdDialog', function($scope, $resource, Entry, $mdSidenav, $mdDialog){
 
 
     var reformatDate;
@@ -95,7 +95,23 @@ app.controller("mainCTRL",['$scope', '$resource', 'Entry', '$mdSidenav', functio
 
     $scope.navDrawOpen = function(){
         $mdSidenav('left').toggle();
-    }
+    };
+
+    $scope.showAdvanced = function(ev) {
+        console.log("show advanced");
+    //    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+        $mdDialog.show({
+            //controller: mainCTRL,
+            templateUrl: 'about.html.erb',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true
+
+        })};
+
+
+
+
 
 
 }]);

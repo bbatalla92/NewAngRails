@@ -10,52 +10,57 @@
 </head>
 <body  ng-app="angRails" ng-controller="mainCTRL">
 <!-- ng-controller="mainCTRL"-->
-<div layout="column" layout-fill>
 
-<md-toolbar class="toolbar md-whiteframe-z1 layout-padding">
-    <div class="md-toolbar-tools">
-        <h2>
-            <span>Attendance Log</span>
-        </h2>
-        <span flex></span>
-        <md-button class="md-icon-button" aria-label="Favorite" ng-click="navDrawOpen()" hide-gt-md>
-            <md-icon><%= image_tag('ic_menu_black_24px.svg')%></md-icon>
-        </md-button>
-    </div>
-</md-toolbar>
+<div layout="column" layout-fill flex ng-cloak>
+
+    <md-toolbar class="toolbar md-whiteframe-z1 layout-padding">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Attendance Log</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Favorite" ng-click="navDrawOpen()" hide-gt-md>
+                <md-icon><%= image_tag('ic_menu_black_24px.svg')%></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
 
     <md-content layout="row" flex layout-fill >
 
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-        <!-- Trigger element is a md-button with an icon -->
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2 fixedHeader" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <!-- Trigger element is a md-button with an icon -->
+
+
+            <md-button ng-click="navDrawOpen()" ui-sref-active="activeState" ui-sref="home" class="centerText">
+                <md-icon><%= image_tag('ic_home_black_24px.svg')%></md-icon>
+                Home
+            </md-button>
+            <md-divider></md-divider>
+            <md-button ng-click="navDrawOpen()" ui-sref-active="activeState" ui-sref="filterData" class="centerText">
+                <md-icon><%= image_tag('ic_filter_list_black_24px.svg')%></md-icon>
+                Filter Data
+            </md-button>
+            <md-divider></md-divider>
+
+            <!--<md-button ng-click="showAdvanced($event)" ui-sref-active="" >
+                <md-icon><%= image_tag('')%></md-icon>
+                About
+            </md-button>-->
+        </md-sidenav>
 
 
 
-
-        <md-button ng-click="navDrawOpen()" ui-sref-active="activeState" ui-sref="home" class="centerText">
-            <md-icon><%= image_tag('ic_home_black_24px.svg')%></md-icon>
-            Home
-        </md-button>
-        <md-divider></md-divider>
-        <md-button ng-click="navDrawOpen()" ui-sref-active="activeState" ui-sref="filterData" class="centerText">
-            <md-icon><%= image_tag('ic_filter_list_black_24px.svg')%></md-icon>
-            Filter Data
-        </md-button>
-        <md-divider></md-divider>
-    </md-sidenav>
+        <div class="container">
+            <%= yield %>
 
 
-
-    <div class="container">
-        <%= yield %>
-
-
-    <md-divider></md-divider>
-    <b>Copyright &copy; 2016 BRENNAN BATALLA</b>
-    </div>
+            <md-divider></md-divider>
+            <b>Copyright &copy; 2016 BRENNAN BATALLA</b>
+        </div>
 
 
-</md-content>
+    </md-content>
 
 
 
